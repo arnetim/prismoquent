@@ -260,7 +260,7 @@ class Query {
       $this->model->endpoint,
       $this->model->token,
       null,
-      new LaravelCache()
+      $this->model->cache
     );
   }
 

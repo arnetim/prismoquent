@@ -20,6 +20,8 @@ abstract class Model {
 
   public $document;
 
+  public $cache;
+
   /**
    * Grab variables from config
    *
