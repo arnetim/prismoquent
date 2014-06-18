@@ -238,7 +238,7 @@ class Query {
       $form = $form->query("[$query]");
 
     // Submit
-    $results = $form->submit();
+    $results = $form->submit()->getResults();
 
     $class = get_class($this->model);
 
