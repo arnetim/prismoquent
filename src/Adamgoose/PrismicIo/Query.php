@@ -146,14 +146,23 @@ class Query {
    */
   public function find($id)
   {
-    $collection = $this->get();
+    $this->at('document.id', $id);
 
-    $collection = $collection->filter(function($document) use ($id)
-    {
-      if($document->id == $id) return true;
-    });
+    return $this->first();
+  }
 
-    return $collection->first();
+  /**
+   * Find a document by its unique bookmark identifier
+   *
+   * @param  string $bookmark
+   * @return \Prismic\Document
+   */
+  public function findBookmark($bookmark)
+  {
+    $api = $this->prepareApi();
+    $id = $api->bookmark($bookmark);
+
+    return $this->find($id);
   }
 
   /**
