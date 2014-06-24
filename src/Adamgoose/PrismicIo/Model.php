@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Config;
 
 abstract class Model {
 
-  protected $endpoint;
-  protected $token;
-  protected $ref;
+  public $endpoint;
+  public $token;
+  public $ref;
 
   public $collection;
   public $mask;
