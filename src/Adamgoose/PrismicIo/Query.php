@@ -166,6 +166,17 @@ class Query {
   }
 
   /**
+   * Get an array of all bookmarks
+   *
+   * @return array
+   */
+  public function bookmarks()
+  {
+    $api = $this->prepareApi();
+    return (array) $api->bookmarks();
+  }
+
+  /**
    * Return the document with matching slug
    *
    * @param  string $slug
